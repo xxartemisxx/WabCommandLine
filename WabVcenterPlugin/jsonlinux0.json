@@ -1,5 +1,12 @@
 [
 	{
+		"account_name":"root",
+		"description":"",
+		"password":"infra2016",
+		"autochange":false,
+		"target_auth_type":"local"
+	},
+	{
 		"account_name":"infrastructure",
 		"description":"",
 		"password":"infra2016",
