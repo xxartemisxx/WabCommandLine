@@ -6,3 +6,9 @@ the first release permit to extract the list of vm from a vcenter and to reinjec
 we will add a method to delete all / selected devices.
 
 
+
+
+
+
+you can donate if it's usefull for you.
+https://www.paypal.me/innovtech/10
