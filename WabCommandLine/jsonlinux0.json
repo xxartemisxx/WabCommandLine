@@ -1,0 +1,30 @@
+[
+	{
+		"account_name":"infrastructure",
+		"description":"",
+		"password":"infra2016",
+		"autochange":false,
+		"target_auth_type":"local"
+	},
+	{
+		"account_name":"pilotage",
+		"description":"",
+		"password":"pilot2016",
+		"autochange":false,
+		"target_auth_type":"local"
+	},
+	{
+		"account_name":"securite",
+		"description":"",
+		"password":"secu2016",
+		"autochange":false,
+		"target_auth_type":"local"
+	},
+	{
+		"account_name":"integrateur",
+		"description":"",
+		"password":"integrateur2016",
+		"autochange":false,
+		"target_auth_type":"local"
+	}
+]
