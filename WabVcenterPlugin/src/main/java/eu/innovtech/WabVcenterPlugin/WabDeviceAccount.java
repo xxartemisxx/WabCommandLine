@@ -2,6 +2,12 @@ package eu.innovtech.WabVcenterPlugin;
 
 public class WabDeviceAccount {
 	public String account_name="";
+	public String getAccount_name() {
+		return account_name;
+	}
+	public void setAccount_name(String account_name) {
+		this.account_name = account_name;
+	}
 	public String description="";
 	public String password="secret";
 	public Boolean autochange=false;
@@ -31,5 +37,7 @@ public class WabDeviceAccount {
 	public void importFromJson(String jsonString) {
 		
 	}
-	
+	public WabDeviceAccount getWabDeviceAccount() {
+		return this;
+	}
 }

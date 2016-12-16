@@ -2,45 +2,43 @@ package eu.innovtech.WabVcenterPlugin;
 
 import java.util.*;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Base64.Encoder;
+
+//import java.nio.charset.StandardCharsets;
+//import java.util.Base64.Encoder;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.sql.Statement;
 //import java.net.SocketAddress;
-import java.util.logging.*;
-import java.text.SimpleDateFormat;
+//import java.util.logging.*;
+//import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.sql.SQLException;
-import java.io.FileInputStream;
 
-import javax.imageio.IIOException;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
+//import javax.imageio.IIOException;
+//import javax.net.ssl.HostnameVerifier;
+//import javax.net.ssl.HttpsURLConnection;
+//import javax.net.ssl.SSLSession;
 import javax.xml.ws.BindingProvider;
-import javax.xml.ws.soap.SOAPFaultException;
+//import javax.xml.ws.soap.SOAPFaultException;
 
-import java.rmi.RemoteException;
+//import java.rmi.RemoteException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Date;
+//import java.util.Date;
 import java.util.Properties;
 import eu.innovtech.WabVcenterPlugin.DisableSecurity;
+
+//import java.sql.SQLException;
 import java.io.*;
-import java.net.*;
-import java.util.Base64;
+//import java.net.*;
+//import java.util.Base64;
 import com.vmware.vim25.*;
-import com.vmware.vim.*;
-import com.vmware.*;
+//import com.vmware.vim.*;
+//import com.vmware.*;
 
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -50,60 +48,73 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+//import org.apache.http.util.EntityUtils;
 
-import org.apache.http.ConnectionReuseStrategy;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.impl.DefaultBHttpClientConnection;
-import org.apache.http.impl.DefaultConnectionReuseStrategy;
-import org.apache.http.message.BasicHttpRequest;
-import org.apache.http.protocol.HttpCoreContext;
-import org.apache.http.protocol.HttpProcessor;
-import org.apache.http.protocol.HttpProcessorBuilder;
-import org.apache.http.protocol.HttpRequestExecutor;
-import org.apache.http.protocol.RequestConnControl;
-import org.apache.http.protocol.RequestContent;
-import org.apache.http.protocol.RequestExpectContinue;
-import org.apache.http.protocol.RequestTargetHost;
-import org.apache.http.protocol.RequestUserAgent;
-import org.apache.http.util.EntityUtils;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
+//import org.apache.http.ConnectionReuseStrategy;
+//import org.apache.http.HttpHost;
+//import org.apache.http.HttpResponse;
+//import org.apache.http.HttpStatus;
+//import org.apache.http.impl.DefaultBHttpClientConnection;
+//import org.apache.http.impl.DefaultConnectionReuseStrategy;
+//import org.apache.http.message.BasicHttpRequest;
+//import org.apache.http.protocol.HttpCoreContext;
+//import org.apache.http.protocol.HttpProcessor;
+//import org.apache.http.protocol.HttpProcessorBuilder;
+//import org.apache.http.protocol.HttpRequestExecutor;
+//import org.apache.http.protocol.RequestConnControl;
+//import org.apache.http.protocol.RequestContent;
+//import org.apache.http.protocol.RequestExpectContinue;
+//import org.apache.http.protocol.RequestTargetHost;
+//import org.apache.http.protocol.RequestUserAgent;
+//import org.apache.http.util.EntityUtils;
+//import org.apache.http.HttpResponse;
+//import org.apache.http.NameValuePair;
+//import org.apache.http.client.HttpClient;
+//import org.apache.http.client.entity.UrlEncodedFormEntity;
+//import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.client.methods.HttpRequestBase;
+//import org.apache.http.impl.client.HttpClientBuilder;
+//import org.apache.http.message.BasicNameValuePair;
+//import org.apache.http.client.methods.HttpRequestBase;
 
-import java.io.File;
+//import java.io.File;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+//import com.google.gson.JsonElement;
+//import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
+import com.jcabi.ssh.SSH;
+import com.jcabi.ssh.SSHByPassword;
+import com.jcabi.ssh.Shell;
 
 import javax.net.ssl.SSLContext;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
+//import org.apache.http.client.methods.CloseableHttpResponse;
+//import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+//import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+//import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+//import org.apache.http.impl.client.CloseableHttpClient;
+//import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.http.ssl.SSLContexts;
-import org.apache.http.util.EntityUtils;
+//import org.apache.http.ssl.SSLContexts;
+//import org.apache.http.util.EntityUtils;
 
 import eu.innovtech.WabVcenterPlugin.WabDeviceService;
+import eu.innovtech.WabVcenterPlugin.WabDevice;
+//import eu.innovtech.WabVcenterPlugin.WabConnection;
 
 
+/**
+ * @author patrick.szymkowiak@free.fr
+ *
+ */
+/**
+ * @author patrick.szymkowiak@free.fr
+ *
+ */
 public class WabCommandLine 
 {
 	public static Connection connectionDB = null;
@@ -113,6 +124,7 @@ public class WabCommandLine
 	public static String vcenter_password;
 	public static String vcenter_extract_list;
 	public static String wab_hostname;
+	public static int wab_ssh_port;
 	public static String wab_url_api;
 	public static String wab_url_api_devices;
 	public static String wab_user_api;
@@ -120,6 +132,7 @@ public class WabCommandLine
 	public static String wab_api_key;
 	public static String wab_extract_list;
 	public static String wab_exclude_list_device;
+	public static String wab_testacessdevice_list;
 	//should have a better way but will do it later
 	public static int wab_defaut_linux_service_number;
 	public static String wab_linux_servicename_0;
@@ -305,76 +318,91 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	public static String listDevices() throws IOException {
-		String listofdevices="";
+	public static List<String> listDevices() throws IOException {
+		List<String> listofdevices=new ArrayList<String>();
+		List<WabDevice> listofdevicefromwab=null;
 		CloseableHttpClient httpclient = null;
-		    SSLContext sslContext=null;
+		SSLContext sslContext=null;
+		try {
+			sslContext = new SSLContextBuilder()
+					.loadTrustMaterial(null, (certificate, authType) -> true).build();
+	
+			CredentialsProvider credsProvider = new BasicCredentialsProvider();
+			credsProvider.setCredentials(
+					new AuthScope(wab_hostname, 443),
+					new UsernamePasswordCredentials(wab_user_api, wab_password_api));
+	
+			httpclient = HttpClients.custom()
+					.setSSLContext(sslContext)
+					.setDefaultCredentialsProvider(credsProvider)
+					.setSSLHostnameVerifier(new NoopHostnameVerifier())
+					.build();
+	
+			HttpGet httpget = new HttpGet(wab_url_api_devices);
+	
+			System.out.println("Executing request " + httpget.getRequestLine());
+	
+			CloseableHttpResponse response = null;
 			try {
-				sslContext = new SSLContextBuilder()
-					      .loadTrustMaterial(null, (certificate, authType) -> true).build();
-				
-		        CredentialsProvider credsProvider = new BasicCredentialsProvider();
-		        credsProvider.setCredentials(
-		                new AuthScope(wab_hostname, 443),
-		                new UsernamePasswordCredentials(wab_user_api, wab_password_api));
-			    
-			    	    httpclient = HttpClients.custom()
-			    	      .setSSLContext(sslContext)
-			    	      .setDefaultCredentialsProvider(credsProvider)
-			    	      .setSSLHostnameVerifier(new NoopHostnameVerifier())
-			    	      .build();
-
-	            HttpGet httpget = new HttpGet(wab_url_api_devices);
-
-	            System.out.println("Executing request " + httpget.getRequestLine());
-
-	            CloseableHttpResponse response = null;
-				try {
-					response = httpclient.execute(httpget);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-	            try {
-	                HttpEntity entity = response.getEntity();
-
-	                System.out.println("----------------------------------------");
-	                System.out.println(response.getStatusLine());
-	                //EntityUtils.consume(entity);
-	                
-	                InputStream entityResponse = entity.getContent();
-	            	InputStreamReader is = new InputStreamReader(entityResponse);
-	                StringBuilder sb = new StringBuilder();
-	                BufferedReader br = new BufferedReader(is);
-	                 try {
-	                    String read = br.readLine();
-
-	                    while(read !=null){
-	                        sb.append(read);
-	                        read = br.readLine();
-	                    }
-
-	                } catch (IOException e) {
-	                    e.printStackTrace();
-	                }
-
-	                            
-	                System.out.println("Content:"+sb.toString());
-	            } finally {
-	                response.close();
-	            }
-	        } catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e1) {
+				response = httpclient.execute(httpget);
+			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			} finally {
-	            try {
-					httpclient.close();
+			}
+			try {
+				HttpEntity entity = response.getEntity();
+	
+				System.out.println("----------------------------------------");
+				System.out.println(response.getStatusLine());
+				//EntityUtils.consume(entity);
+	
+				InputStream entityResponse = entity.getContent();
+				InputStreamReader is = new InputStreamReader(entityResponse);
+				StringBuilder sb = new StringBuilder();
+				BufferedReader br = new BufferedReader(is);
+				try {
+					String read = br.readLine();
+	
+					while(read !=null){
+						sb.append(read);
+						read = br.readLine();
+					}
+	
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	        }
-		 
+	
+	
+				System.out.println("Content:"+sb.toString());
+				listofdevicefromwab=Arrays.asList(new Gson().fromJson(sb.toString(), WabDevice[].class));
+			} finally {
+				response.close();
+			}
+		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
+			try {
+				httpclient.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		//return what we want from the wab classes. here the name, service , ip ,first account
+		//listofdevices.add("device_name;device_host;protocol;port;account_name;");
+		for(WabDevice tempWabDevice: listofdevicefromwab) {
+			for(WabDeviceService tempWabDeviceService : tempWabDevice.getServices() ) {
+				for(WabDeviceAccount tempWabDeviceAccount : tempWabDeviceService.getAccounts() )
+					listofdevices.add(tempWabDevice.device_name+";"+tempWabDevice.device_host+";"
+							+tempWabDeviceService.getProtocol()+";"
+							+tempWabDeviceService.getSubprotocols().toString()+";"
+							+tempWabDeviceService.getPort()+";"
+							+tempWabDeviceAccount.getAccount_name()+";"
+							+tempWabDeviceService.getService_name()+";"
+						);
+			}
+		}
 		return listofdevices;
 	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -400,12 +428,14 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
 			vcenter_extract_list = prop.getProperty("vcenter_extract_list");
 			wab_url_api = prop.getProperty("url_wab_api");
 			wab_hostname = prop.getProperty("wab_hostname");
+			wab_ssh_port = Integer.parseInt(prop.getProperty("wab_ssh_port"));
 			wab_url_api_devices = prop.getProperty("url_wab_api_devices");
 			wab_user_api=prop.getProperty("wab_user_api");
 			wab_password_api=prop.getProperty("wab_password_api");
 			wab_extract_list=prop.getProperty("wab_extract_list");
 			wab_exclude_list_device=prop.getProperty("wab_exclude_list_device");
 			wab_defaut_linux_service_number=Integer.parseInt(prop.getProperty("wab_defaut_linux_service_number"));
+			wab_testacessdevice_list=prop.getProperty("wab_testacessdevice_list");
 			wab_linux_servicename_0=prop.getProperty("wab_linux_servicename_0");
 			wab_linux_service_0=prop.getProperty("wab_linux_service_0");
 			wab_linux_subprotocol_0=prop.getProperty("wab_linux_subprotocol_0");
@@ -809,6 +839,71 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
 		out.close();
 		fw.close();
 	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public static void testAccessToDevice() throws IOException {
+		//////////////////////////////////////////
+		// test the connection the device and extract it to a file
+		// 
+		List<String> vmList;
+		vmList=listDevices();
+		//the filewriter to extract the vm list in csv and test ssh connection
+		FileWriter fw = new FileWriter(wab_testacessdevice_list);
+		PrintWriter outfile = new PrintWriter(fw);
+		for(String temp:vmList) {
+			//extract the data and test RDP or SSH connection write down Good ok Failed
+			//we will use the wab_user_api and password to test connections
+			// temp is like => device_name;device_ip;protocol;subprotocol;port number;account;service_name;
+			String[] elementList=temp.split(";");
+			//System.out.println("=>"+temp);
+			//System.out.println(" testing device "+elementList[0]);
+			if(elementList[2].indexOf("SSH")!=-1) {
+				//this is a linux with ssh
+				//let's try a ssh connection and write the result in file.
+				System.out.println(" testing SSH on device "+elementList[0]);
+				String execCommand=elementList[5]+"@"+elementList[0];
+				System.out.println(" execute :"+execCommand);
+				Shell shellConnect=new SSHByPassword(wab_hostname, wab_ssh_port,wab_user_api, wab_password_api);
+				
+				String deviceTestingShell = new Shell.Plain(shellConnect).exec(execCommand);
+				
+				System.out.println(" result of command "+deviceTestingShell);
+				// if result is =>Can't open target session 
+				// so dead
+				// thats good Welcome on Wallix AdminBastion
+				if(deviceTestingShell.indexOf("Can\'t")!=-1) {
+					outfile.println(elementList[0]+";"+elementList[5]+";FAILED;");
+				}else{
+					outfile.println(elementList[0]+";"+elementList[5]+";GOOD;");
+				}
+			}
+			
+			
+			
+			//outfile.println(temp);
+		}
+		//close the filewriter for vm
+		outfile.flush();
+		outfile.close();
+		fw.close();		
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public static void extractDeviceFromWab() throws IOException {
+		//////////////////////////////////////////
+		// let's interrogate the wab appliance to get all the device / service / accounts
+		// write the result in csv file 
+		List<String> vmList;
+		vmList=listDevices();
+		//the filewriter to extract the vm list in csv
+		FileWriter fw = new FileWriter(wab_extract_list);
+		PrintWriter out = new PrintWriter(fw);
+		for(String temp:vmList) {
+			out.println(temp);
+		}
+		//close the filewriter for vm
+		out.flush();
+		out.close();
+		fw.close();
+	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	public static void main( String[] args ) throws IOException, KeyManagementException, NoSuchAlgorithmException, KeyStoreException, CertificateException
     {
@@ -820,8 +915,9 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
 			System.out.println("command are.");
 			System.out.println("extractvm			=> extract the vm list on the csv file");
 			System.out.println("pushvm				=> push vm extracted from vcenter to the wab");
-			System.out.println("extractdevice			=> extract wab device to csv file 			[ in DEV ]");
-			System.out.println("testdevice			=> test connectivity to each device 			[ in DEV ]");
+			System.out.println("extractdevice			=> extract wab device to csv file 			");
+			System.out.println("testdevice			=> test connectivity to each device 			");
+			System.out.println("backupdevice			=> en crypted file to backup the wab device 			[ in DEV ]");
 			System.out.println("deletedevice			=> delete device / service / account from a file	[ in DEV ]");
 		}else{
 			setPropertiesFile();
@@ -836,9 +932,10 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
 				addDeviceToWabFromVcenter();
 				break;
 			case "extractdevice":
+				extractDeviceFromWab();
 				break;
 			case "testdevice":
-				System.out.println("not functionnal at this time. sorry.");
+				testAccessToDevice();
 				break;
 			case "deletedevice":
 				System.out.println("not functionnal at this time. sorry.");

@@ -11,7 +11,13 @@ public class WabDevice {
 	 public String description;
 	 public String device_host;
      public List<WabDeviceService> services;
-     public void WabDevice() {
+     public List<WabDeviceService> getServices() {
+		return services;
+	}
+	public void setServices(List<WabDeviceService> services) {
+		this.services = services;
+	}
+	public void WabDevice() {
     	 device_name="";
     	 description="";
     	 alias="";
