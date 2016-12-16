@@ -5,9 +5,15 @@ the first release permit to extract the list of vm from a vcenter and to reinjec
 
 we will add a method to delete all / selected devices.
 
+____________________________________________________________
 
+To run the program download WabCommandLine directory.
+Change the config.properties file and json file for your purpose.
 
+Run java -jar WabCommandLine
 
+See the wiki for more informations.
+_____________________________________________________________
 
 
 you can donate if it's usefull for you.
