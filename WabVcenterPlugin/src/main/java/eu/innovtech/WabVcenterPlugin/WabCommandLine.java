@@ -318,7 +318,7 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	public static List<String> listDevices() throws IOException {
+	public static List<String> listDevices() {
 		List<String> listofdevices=new ArrayList<String>();
 		List<WabDevice> listofdevicefromwab=null;
 		CloseableHttpClient httpclient = null;
@@ -375,8 +375,16 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
 	
 				System.out.println("Content:"+sb.toString());
 				listofdevicefromwab=Arrays.asList(new Gson().fromJson(sb.toString(), WabDevice[].class));
+			} catch (UnsupportedOperationException | IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			} finally {
-				response.close();
+				try {
+					response.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e1) {
 			// TODO Auto-generated catch block
@@ -921,14 +929,16 @@ public static void addDevice(String deviceName,String deviceOS,String deviceDesc
 			System.out.println("deletedevice			=> delete device / service / account from a file	[ in DEV ]");
 		}else{
 			setPropertiesFile();
-			//init vcenter with correct params
-			theVcenterServer= new VcenterWrapper(vcenter_url,vcenter_user,vcenter_password);
 			String commandTodo=args[0];
 			switch(commandTodo) {
 			case "extractvm":
+				//init vcenter with correct params
+				theVcenterServer= new VcenterWrapper(vcenter_url,vcenter_user,vcenter_password);
 				extractVmToFileFromVcenter();
 				break;
 			case "pushvm":
+				//init vcenter with correct params
+				theVcenterServer= new VcenterWrapper(vcenter_url,vcenter_user,vcenter_password);
 				addDeviceToWabFromVcenter();
 				break;
 			case "extractdevice":
