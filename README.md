@@ -8,6 +8,7 @@ we will add a method to delete all / selected devices.
 ____________________________________________________________
 
 To run the program download WabCommandLine directory.
+You must have java 8 installed.
 Change the config.properties file and json file for your purpose.
 
 Run java -jar WabCommandLine
